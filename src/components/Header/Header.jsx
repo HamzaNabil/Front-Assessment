@@ -16,6 +16,7 @@ function Header() {
                 className="search-input"
                 type="text"
                 placeholder="Search or type"
+                autoFocus
               />
             </div>
           </form>

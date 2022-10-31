@@ -1,12 +1,17 @@
-import Sidebar from "./components/Sidebar/Sidebar";
-import Content from "./components/Content/Content";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Cars from "./pages/Cars";
 
 function App() {
   return (
-    <div className="app">
-      <Sidebar />
-      <Content />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/cars" element={<Cars />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

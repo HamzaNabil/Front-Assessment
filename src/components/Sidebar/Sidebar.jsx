@@ -5,6 +5,7 @@ import { AiOutlineCar } from "react-icons/ai";
 import { MdOutlineDashboard } from "react-icons/md";
 import { FaCogs } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -16,16 +17,16 @@ function Sidebar() {
         <nav className="list">
           <ul>
             <li className="list__item">
-              <a href="#">
+              <Link to="/">
                 <MdOutlineDashboard fontSize={20} />
                 <span> Dashboard </span>
-              </a>
+              </Link>
             </li>
             <li className="list__item">
-              <a href="#">
+              <Link to="/cars">
                 <AiOutlineCar fontSize={20} />
                 <span> Cars </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

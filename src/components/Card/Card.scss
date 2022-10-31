@@ -1,0 +1,51 @@
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .card-item {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    width: 31%;
+    margin-bottom: 35px;
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__title {
+      font-size: 18px;
+      font-weight: 700;
+      span {
+        font-weight: 400;
+        display: block;
+        font-size: 16px;
+        color: #72767c;
+      }
+    }
+    &__img {
+      text-align: center;
+      margin: 20px 0;
+    }
+    &__desc {
+      display: flex;
+      justify-content: space-between;
+      svg {
+        color: #a162f7;
+      }
+      span {
+        color: #72767c;
+      }
+      > div {
+        display: flex;
+        gap: 10px;
+        > span {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}

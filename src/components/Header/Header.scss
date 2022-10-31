@@ -1,9 +1,10 @@
 .app-header {
   padding: 15px 30px;
   background-color: #fff;
-  min-height: 78px;
+  height: 78px;
   display: flex;
   justify-content: space-between;
+  flex: 1;
 
   &__left {
     .search-wrapper {
