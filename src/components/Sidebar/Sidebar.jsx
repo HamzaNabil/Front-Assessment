@@ -3,8 +3,8 @@ import SiteLogo from "../../assets/images";
 import "./Sidebar.scss";
 import { AiOutlineCar } from "react-icons/ai";
 import { MdOutlineDashboard } from "react-icons/md";
-import { FaCogs } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
+import { FaCogs } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
