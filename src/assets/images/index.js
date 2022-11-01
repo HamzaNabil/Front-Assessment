@@ -14,6 +14,9 @@ import car2 from "./car2.png";
 import car3 from "./car3.png";
 
 import car1Card from "./car1-card.png";
+import car2Card from "./car2-card.png";
+import car3Card from "./car3-card.png";
+import car4Card from "./car4-card.png";
 
 export {
   userImage,
@@ -28,6 +31,9 @@ export {
   car2,
   car3,
   car1Card,
+  car2Card,
+  car3Card,
+  car4Card,
 };
 
 export default SiteLogo;

@@ -1,16 +1,17 @@
 import React from "react";
 import Card from "../Card/Card";
 
-function CarsList() {
+function CarsList({ data, viewType }) {
   return (
     <div className="cars-list">
-      <div className="cards">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+      <div
+        className={`cards ${
+          viewType === "vertical" ? "vertical" : "horizontal"
+        }`}
+      >
+        {data?.map((car) => (
+          <Card key={car.id} item={car} />
+        ))}
       </div>
     </div>
   );

@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header/Header";
 import Sidebar from "../components/Sidebar/Sidebar";
 
 function Layout(props) {
+  const [openSidebar, setOpenSidebar] = useState(false);
   return (
     <>
-      <Sidebar />
+      <Sidebar openSidebar={openSidebar} />
       <div style={{ flex: 1 }}>
-        <Header />
+        <Header openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
         {props.children}
       </div>
     </>

@@ -1,0 +1,11 @@
+.content {
+  flex: 5;
+}
+
+.content__wrapper {
+  padding: 27px 30px;
+
+  @media (max-width: 768px) {
+    padding: 10px 15px;
+  }
+}

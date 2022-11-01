@@ -1,5 +1,5 @@
 .app-sidebar {
-  min-height: 100%;
+  min-height: 100vh;
   background-color: #fff;
   min-width: 248px;
   padding: 30px 24px;
@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.3s;
 
   &__logo {
     margin-bottom: 40px;
@@ -25,5 +26,27 @@
         background-color: #f3f5f8;
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    position: fixed;
+    height: 100vh;
+    z-index: 1010;
+    left: -100%;
+  }
+
+  &.showSide {
+    left: 0;
+  }
+}
+
+[dir="ltr"] .app-sidebar {
+  @media (max-width: 768px) {
+    left: auto;
+    right: -100%;
+  }
+
+  &.showSide {
+    right: 0;
   }
 }

@@ -1,15 +1,14 @@
 import React from "react";
 import SiteLogo from "../../assets/images";
-import "./Sidebar.scss";
 import { AiOutlineCar } from "react-icons/ai";
 import { MdOutlineDashboard } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { FaCogs } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar({ openSidebar }) {
   return (
-    <div className="app-sidebar">
+    <div className={`app-sidebar ${openSidebar ? "showSide" : ""}`}>
       <div className="app-sidebar__top">
         <div className="app-sidebar__logo">
           <SiteLogo />

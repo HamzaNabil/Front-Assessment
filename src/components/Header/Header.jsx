@@ -1,10 +1,11 @@
 import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineNotificationsNone } from "react-icons/md";
+import { FaBars } from "react-icons/fa";
+import { IoCloseOutline } from "react-icons/io5";
 import { userImage } from "../../assets/images";
-import "./Header.scss";
 
-function Header() {
+function Header({ setOpenSidebar, openSidebar }) {
   return (
     <div className="app-header">
       <div className="app-header__left">
@@ -29,6 +30,16 @@ function Header() {
         </div>
         <div className="app-header__username">
           <img src={userImage} alt="user image" />
+        </div>
+        <div
+          className="app-header__baricon"
+          onClick={() => setOpenSidebar(!openSidebar)}
+        >
+          {openSidebar ? (
+            <IoCloseOutline fontSize={20} />
+          ) : (
+            <FaBars fontSize={20} />
+          )}
         </div>
       </div>
     </div>

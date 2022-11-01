@@ -18,7 +18,6 @@ import { TfiReload } from "react-icons/tfi";
 import { FaCogs } from "react-icons/fa";
 
 import { BsStarHalf } from "react-icons/bs";
-import "../components/Content/Content.scss";
 
 import "react-circular-progressbar/dist/styles.css";
 function Dashboard() {

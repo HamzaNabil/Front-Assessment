@@ -1,33 +1,41 @@
 import React from "react";
 import { FiHeart, FiRefreshCcw } from "react-icons/fi";
 import { AiOutlineUser } from "react-icons/ai";
-import "./Card.scss";
-import { car1Card } from "../../assets/images";
+import { car1Card, car2Card, car3Card, car4Card } from "../../assets/images";
 
-function Card() {
+const images = {
+  car1Card,
+  car2Card,
+  car3Card,
+  car4Card,
+};
+
+function Card({ item }) {
   return (
     <div className="card-item">
       <div className="card-item__header">
         <h2 className="card-item__title">
-          Porshe 718 Cayman S<span>Coupe</span>
+          {item.title}
+          <span>{item.type}</span>
         </h2>
         <FiHeart fontSize={20} />
       </div>
       <div className="card-item__img">
-        <img src={car1Card} alt="" />
+        <img src={images[item.image]} alt="" />
       </div>
       <div className="card-item__desc">
         <div>
           <span>
-            <AiOutlineUser fontSize={16} /> 4
+            <AiOutlineUser fontSize={16} /> {item.passenger}
           </span>
           <span>
             <FiRefreshCcw fontSize={16} />
-            Manual
+            {item.geer}
           </span>
         </div>
         <p>
-          $400<span>/d</span>
+          {item.price}
+          <span>{item.years}</span>
         </p>
       </div>
     </div>
