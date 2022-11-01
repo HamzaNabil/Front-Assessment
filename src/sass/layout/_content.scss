@@ -5,7 +5,7 @@
 .content__wrapper {
   padding: 27px 30px;
 
-  @media (max-width: 768px) {
+  @include respond(mobile) {
     padding: 10px 15px;
   }
 }

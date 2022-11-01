@@ -2,7 +2,7 @@
   "cars": [
     {
       "id": 1,
-      "title": "Porshe1 718 Cayman S",
+      "title": "First Car",
       "type": "toyta",
       "passenger": 1,
       "price": "$400",
@@ -13,7 +13,7 @@
     },
     {
       "id": 2,
-      "title": "Porshe2 718 Cayman S",
+      "title": "Second Car",
       "type": "byd",
       "passenger": 3,
       "price": "$400",
@@ -24,7 +24,7 @@
     },
     {
       "id": 3,
-      "title": "Porshe3 718 Cayman S",
+      "title": "First Car",
       "type": "coupe",
       "passenger": 3,
       "price": "$400",
@@ -35,7 +35,7 @@
     },
     {
       "id": 4,
-      "title": "Porshe4 718 Cayman S",
+      "title": "First Car",
       "type": "coupe",
       "passenger": 4,
       "price": "$400",
@@ -65,6 +65,68 @@
       "years": "/d",
       "image": "car1Card",
       "latest": "new"
+    }
+  ],
+
+  "widgets": [
+    {
+      "id": 1,
+      "icon": "filledIcon",
+      "title": "Energy",
+      "progress": 45,
+      "color": "#fff",
+      "pathColor": "#fff"
+    },
+    {
+      "id": 2,
+      "icon": "arrowIcon",
+      "title": "Range",
+      "progress": 35,
+      "color": "#FF7E86",
+      "pathColor": "rgba(255,126,134, 0.6)"
+    },
+    {
+      "id": 3,
+      "icon": "bloodIcon",
+      "title": "Break fluid",
+      "progress": 60,
+      "color": "#a162f7",
+      "pathColor": "rgba(161,98,247, 0.6)"
+    },
+    {
+      "id": 4,
+      "icon": "tierIcon",
+      "title": "Tier Wear",
+      "progress": 26,
+      "color": "#f6cc0d",
+      "pathColor": "rgba(246,204,13, 0.6)"
+    }
+  ],
+
+  "ads": [
+    {
+      "id": 1,
+      "recommend": "64% Recommend",
+      "title": "Mini Cooper",
+      "image": "car1",
+      "views": "100k",
+      "price": "$32/h"
+    },
+    {
+      "id": 2,
+      "recommend": "75% Recommend",
+      "title": "Porsche 911 Carrera",
+      "image": "car2",
+      "views": "100k",
+      "price": "$32/h"
+    },
+    {
+      "id": 3,
+      "recommend": "75% Recommend",
+      "title": "Porsche 911 Carrera",
+      "image": "car3",
+      "views": "100k",
+      "price": "$32/h"
     }
   ]
 }

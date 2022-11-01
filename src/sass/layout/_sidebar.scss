@@ -28,25 +28,25 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @include respond(mobile) {
     position: fixed;
     height: 100vh;
     z-index: 1010;
-    left: -100%;
-  }
-
-  &.showSide {
-    left: 0;
-  }
-}
-
-[dir="ltr"] .app-sidebar {
-  @media (max-width: 768px) {
-    left: auto;
     right: -100%;
   }
 
   &.showSide {
     right: 0;
+  }
+}
+
+[dir="ltr"] .app-sidebar {
+  @include respond(mobile) {
+    left: -100%;
+    right: auto;
+  }
+
+  &.showSide {
+    left: 0;
   }
 }

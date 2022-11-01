@@ -4,7 +4,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
-  @media (max-width: 768px) {
+  @include respond(mobile) {
     flex-direction: column;
   }
   .card-item {
@@ -13,8 +13,9 @@
     border-radius: 16px;
     width: 31%;
     margin-bottom: 35px;
+    cursor: pointer;
 
-    @media (max-width: 768px) {
+    @include respond(mobile) {
       width: 100%;
     }
 

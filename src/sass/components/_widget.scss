@@ -3,7 +3,7 @@
   justify-content: space-between;
   margin-bottom: 30px;
 
-  @media (max-width: 768px) {
+  @include respond(mobile) {
     flex-direction: column;
   }
 
@@ -13,7 +13,7 @@
     text-align: center;
     padding: 22px 0;
     width: 23%;
-    @media (max-width: 768px) {
+    @include respond(mobile) {
       width: 100%;
       margin-bottom: 20px;
     }
@@ -33,7 +33,7 @@
       }
     }
 
-    &.purble-color {
+    &:first-of-type {
       background-color: #a162f7;
       color: #fff;
 
@@ -42,19 +42,19 @@
       }
     }
 
-    &.orange-color {
+    &:nth-of-type(2) {
       .widget-item__icon {
         background-color: #ff7e861a;
       }
     }
 
-    &.gray-purble-color {
+    &:nth-of-type(3) {
       .widget-item__icon {
         background-color: #a162f71a;
       }
     }
 
-    &.yellow-color {
+    &:last-of-type {
       .widget-item__icon {
         background-color: #f6cc0d1a;
       }

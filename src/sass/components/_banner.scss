@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
-  @media (max-width: 768px) {
+  @include respond(mobile) {
     flex-direction: column;
   }
   .banner-item {
@@ -34,7 +34,7 @@
       align-items: center;
       justify-content: space-between;
 
-      @media (max-width: 768px) {
+      @include respond(mobile) {
         flex-direction: column;
         gap: 10px;
       }
@@ -82,7 +82,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @include respond(mobile) {
       width: 100% !important;
       margin-bottom: 20px;
     }

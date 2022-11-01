@@ -4,38 +4,74 @@ import { TbAdjustmentsHorizontal } from "react-icons/tb";
 import { RiLayoutMasonryFill } from "react-icons/ri";
 import Layout from "../Container/Layout";
 import useFetch from "../hooks/useFetch";
+import { useSelector } from "react-redux";
+import Modal from "../components/Modal/Modal";
 
 function Cars() {
   const [filteredData, setFilteredData] = useState([]);
   const [viewType, setViewType] = useState(null);
+  const [carDetails, setCarDetails] = useState(null);
+  const [showModal, setShowModal] = useState(null);
+  const state = useSelector((state) => state.search);
 
-  const url = "https://run.mocky.io/v3/2f05085f-32e2-452f-bbc1-0f9a32d6b9a2";
-  const { data } = useFetch(url); // custom hook
+  const url = "https://run.mocky.io/v3/e8f2c6b7-4643-447b-9123-dd225d7138cb";
+  const { data, loading, error } = useFetch(url); // custom hook
 
   const handleTypeFilter = (e) => {
     let value = e.target.value;
-    let newData = data?.cars?.filter((car) => car.type === value);
-    setFilteredData(newData);
+    if (data?.cars?.length > 0) {
+      let newData = [...data?.cars];
+      if (value) {
+        newData = data?.cars?.filter((car) => car.type === value);
+      }
+      setFilteredData(newData);
+    }
   };
 
   const handleLatestFilter = (e) => {
     let value = e.target.value;
-    let newData = data?.cars?.filter((car) => car.latest === value);
-    setFilteredData(newData);
+    if (data?.cars?.length > 0) {
+      let newData = [...data?.cars];
+      if (value) {
+        newData = data?.cars?.filter((car) => car.latest === value);
+      }
+      setFilteredData(newData);
+    }
   };
 
   const handleResetFilters = () => {
-    setFilteredData(data);
+    setFilteredData(data?.cars);
+  };
+
+  const handleSelectedCar = (car) => {
+    setCarDetails(car);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const carTypes = ["toyta", "byd", "coupe"];
 
+  // First load
+  useEffect(() => {
+    if (data) {
+      setFilteredData(data?.cars);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    const searchData = data?.cars?.filter((car) =>
+      car.title.toLowerCase().includes(state.term.toLowerCase())
+    );
+    setFilteredData(searchData);
+  }, [state.term]);
+
   return (
     <Layout>
-      {console.log("filteredData", filteredData)}
       <div className="cars-page content__wrapper">
         <h2 className="cars__title"> Booking </h2>
-
         <div className="filter">
           <div>
             <select onChange={handleLatestFilter}>
@@ -56,22 +92,29 @@ function Cars() {
           <div>
             <span
               onClick={() => setViewType("horizontal")}
-              className={viewType == "horizontal" ? "active" : ""}
+              className={viewType === "horizontal" ? "active" : ""}
             >
               <RiLayoutMasonryFill fontSize={20} />
             </span>
             <span
               onClick={() => setViewType("vertical")}
-              className={viewType == "vertical" ? "active" : ""}
+              className={viewType === "vertical" ? "active" : ""}
             >
               <TbAdjustmentsHorizontal fontSize={20} />
             </span>
           </div>
         </div>
         <CarsList
-          data={filteredData.length > 0 ? filteredData : data?.cars}
+          loading={loading}
+          error={error}
+          data={filteredData?.length > 0 ? filteredData : []}
           viewType={viewType}
+          handleSelectedCar={handleSelectedCar}
         />
+
+        {showModal && (
+          <Modal item={carDetails} handleCloseModal={handleCloseModal} />
+        )}
       </div>
     </Layout>
   );

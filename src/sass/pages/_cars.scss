@@ -7,11 +7,11 @@
 
   .reset-filter {
     border: 0;
-    padding: 8px;
+    padding: 4px 15px;
     cursor: pointer;
-    background-color: $main_color;
-    color: $white_color;
-    border-radius: 5px;
+    background-color: #a162f7;
+    color: #fff;
+    border-radius: 20px;
   }
 
   .filter {
@@ -20,7 +20,7 @@
     align-items: center;
     margin-bottom: 34px;
 
-    @media (max-width: 768px) {
+    @include respond(mobile) {
       flex-direction: column;
       gap: 12px;
     }

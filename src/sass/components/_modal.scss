@@ -1,0 +1,67 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  background-color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.modal-wrapper {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal > * {
+  display: block;
+  margin: 10px auto;
+}
+
+.modal img {
+  margin-bottom: 50px;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background-color: $main_color;
+  color: #fff;
+  line-height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal .details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  background-color: #eee;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 10px;
+  margin: 0;
+}
+
+.modal .details > div {
+  display: flex;
+  gap: 5px;
+  color: $main_color;
+  align-items: center;
+}
+
+.modal .details p {
+  margin: 0;
+}

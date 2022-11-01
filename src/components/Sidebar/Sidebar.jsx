@@ -4,7 +4,8 @@ import { AiOutlineCar } from "react-icons/ai";
 import { MdOutlineDashboard } from "react-icons/md";
 import { BiLogOut } from "react-icons/bi";
 import { FaCogs } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 function Sidebar({ openSidebar }) {
   return (
@@ -16,15 +17,28 @@ function Sidebar({ openSidebar }) {
         <nav className="list">
           <ul>
             <li className="list__item">
-              <Link to="/">
+              <Link
+                to="/"
+                className={window.location.pathname === "/" ? "active" : ""}
+              >
                 <MdOutlineDashboard fontSize={20} />
-                <span> Dashboard </span>
+                <span>
+                  <FormattedMessage
+                    id="sidebar.dashboard"
+                    defaultMessage={"dashboard"}
+                  />
+                </span>
               </Link>
             </li>
             <li className="list__item">
-              <Link to="/cars">
+              <Link
+                to="/cars"
+                className={window.location.pathname === "/cars" ? "active" : ""}
+              >
                 <AiOutlineCar fontSize={20} />
-                <span> Cars </span>
+                <span>
+                  <FormattedMessage id="sidebar.cars" defaultMessage={"cars"} />
+                </span>
               </Link>
             </li>
           </ul>

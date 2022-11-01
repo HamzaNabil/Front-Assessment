@@ -10,9 +10,9 @@ const images = {
   car4Card,
 };
 
-function Card({ item }) {
+function Card({ item, handleSelectedCar }) {
   return (
-    <div className="card-item">
+    <div className="card-item" onClick={handleSelectedCar}>
       <div className="card-item__header">
         <h2 className="card-item__title">
           {item.title}

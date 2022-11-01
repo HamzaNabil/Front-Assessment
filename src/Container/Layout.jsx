@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 
 function Layout(props) {
   const [openSidebar, setOpenSidebar] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(null);
   return (
     <>
       <Sidebar openSidebar={openSidebar} />

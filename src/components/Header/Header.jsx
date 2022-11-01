@@ -4,8 +4,12 @@ import { MdOutlineNotificationsNone } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
 import { IoCloseOutline } from "react-icons/io5";
 import { userImage } from "../../assets/images";
+import { useDispatch, useSelector } from "react-redux";
+import { langAction, searchAction } from "../../redux/actions";
 
 function Header({ setOpenSidebar, openSidebar }) {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
   return (
     <div className="app-header">
       <div className="app-header__left">
@@ -18,6 +22,8 @@ function Header({ setOpenSidebar, openSidebar }) {
                 type="text"
                 placeholder="Search or type"
                 autoFocus
+                value={state.search.term}
+                onChange={(e) => dispatch(searchAction(e.target.value))}
               />
             </div>
           </form>
@@ -31,6 +37,18 @@ function Header({ setOpenSidebar, openSidebar }) {
         <div className="app-header__username">
           <img src={userImage} alt="user image" />
         </div>
+        <span
+          className={state?.language?.lang === "ar" ? "active" : ""}
+          onClick={() => dispatch(langAction("ar"))}
+        >
+          Ar
+        </span>
+        <span
+          className={state?.language?.lang === "en" ? "active" : ""}
+          onClick={() => dispatch(langAction("en"))}
+        >
+          En
+        </span>
         <div
           className="app-header__baricon"
           onClick={() => setOpenSidebar(!openSidebar)}

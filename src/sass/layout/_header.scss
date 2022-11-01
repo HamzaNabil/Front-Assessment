@@ -10,7 +10,7 @@
     .search-wrapper {
       width: 350px;
 
-      @media (max-width: 768px) {
+      @include respond(mobile) {
         width: 160px;
       }
       .form-group {
@@ -24,6 +24,7 @@
           transform: translateY(-50%);
           z-index: 10;
         }
+
         .search-input {
           position: absolute;
           width: 100%;
@@ -41,10 +42,18 @@
     display: flex;
     align-items: center;
     gap: 25px;
-    @media (max-width: 768px) {
+    @include respond(mobile) {
       gap: 10px;
     }
 
+    > span {
+      cursor: pointer;
+      &.active,
+      &:hover {
+        color: $main_color;
+        font-weight: bold;
+      }
+    }
     .app-header__notification {
       position: relative;
       cursor: pointer;
@@ -58,15 +67,38 @@
       }
     }
 
+    .app-header__username {
+      img {
+        @include respond(mobile) {
+          width: 25px;
+        }
+      }
+    }
+
     .app-header__baricon {
       display: none;
-      @media (max-width: 768px) {
+      position: relative;
+      z-index: 9999;
+      @include respond(mobile) {
         display: block;
       }
     }
   }
 
-  @media (max-width: 768px) {
+  @include respond(mobile) {
     padding: 15px;
+  }
+}
+
+[dir="rtl"] {
+  .app-header__left {
+    .search-wrapper {
+      .form-group {
+        svg {
+          left: auto;
+          right: 15px;
+        }
+      }
+    }
   }
 }
